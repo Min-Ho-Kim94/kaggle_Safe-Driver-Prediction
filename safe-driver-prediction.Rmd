@@ -1,18 +1,36 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "Porto Seguro’s Safe Driver Prediction"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+  word_document:
+    toc: yes
+    toc_depth: '3'
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
-```{r}
-plot(cars)  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+kaggle address : https://www.kaggle.com/zizonpingu
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+**목적** Porto Seguro(브라질 보험회사)의 데이터를 바탕으로 운전자가 내년에 자동차 보험 청구를 할 확률을 계산하는 것.
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+# data load step
+
+```{r packages, message=F, warning=F} 
+library(tidyverse)
+library(ggrepel)
+ 
+```
+
+
+```{r}
+train <- fread('~/safe driver data file/train.csv', na="-1")
+```
+
