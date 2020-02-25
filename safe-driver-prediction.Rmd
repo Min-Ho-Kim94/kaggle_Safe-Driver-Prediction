@@ -22,7 +22,7 @@ kaggle address : https://www.kaggle.com/zizonpingu
 **목적** Porto Seguro(브라질 보험회사)의 데이터를 바탕으로 운전자가 내년에 자동차 보험 청구를 할 확률을 계산하는 것.
 
 # data load step
-
+ 
 ```{r packages, message=F, warning=F} 
 library(tidyverse)
 library(ggrepel)
